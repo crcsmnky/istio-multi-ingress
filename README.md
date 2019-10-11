@@ -1,5 +1,11 @@
 # Multi-Tenant Ingress using Istio
 
+## Contents
+- [Infrastructure Setup](#infrastructure-setup)
+- [Deploy Addtional Ingress Gateway](#deploy-additional-ingress-gateway)
+- [Deploy Test Apps](#deploy-test-apps)
+- [Setup and Configure HTTPS](#setup-and-configure-https)
+
 ## Infrastructure Setup
 
 First, create the GKE cluster:
@@ -73,7 +79,7 @@ Finally, turn on Istio's auto-injection for the `default` namespace so that all 
 kubectl label ns default istio-injection=enabled
 ```
 
-## Add Additional Ingress Gateways
+## Deploy Additional Ingress Gateway
 
 Now that Istio is up and running, use the following steps to run additional Istio `ingressgateway` deployments.
 
@@ -167,7 +173,7 @@ Now `helloworld-v1` is running in the `hello-v1` namespace, and `istio-ingressga
 
 Similarly, `helloworld-v2` is running in the `hello-v2` namespace, and `example-ingressgateway` is configured to send external traffic to that service using a `Gateway`/`VirtualService` pair. 
 
-## Configure LetsEncrypt Certificates
+## Setup and Configure HTTPS
 
 **TODO**
 
